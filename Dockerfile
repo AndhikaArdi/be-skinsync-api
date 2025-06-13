@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Buka port untuk Flask
-EXPOSE 5000
+EXPOSE 3000
 
 # Jalankan server
 CMD ["python", "recomend_api.py"]

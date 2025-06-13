@@ -42,7 +42,4 @@ def home():
     return jsonify({"message": "SkinSync Backend is running!"})
 
 if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host="0.0.0.0", port=port)
-    # backend berjalan di port 5000
+    app.run(host="0.0.0.0", port=3000)
