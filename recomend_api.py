@@ -26,12 +26,16 @@ def analyze():
 @app.route("/recommend", methods=["POST"])
 def recommend():
     data = request.get_json()
-    skin_type = data.get("type")
+    skin_type = data.get("type")  # misalnya "oily"
+
     if not skin_type:
         return jsonify({'error': 'Skin type is required'}), 400
 
-    recs = get_recommendation(skin_type)
-    return jsonify({'recommendations': recs})
+    rec = get_recommendation(skin_type)
+    if not rec:
+        return jsonify({'error': 'Invalid skin type'}), 400
+
+    return jsonify(rec)
 
 @app.route("/")
 def home():
