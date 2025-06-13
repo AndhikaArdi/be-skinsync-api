@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
 
-from utils.recomend import get_recommendation
+from utils.recommend import get_recommendation
 
 app = Flask(__name__)
 CORS(app)
